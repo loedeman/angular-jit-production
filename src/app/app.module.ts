@@ -1,16 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { DynamicTemplateComponent, DynamicTemplateContainerDirective } from './dynamic-template.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        DynamicTemplateComponent,
+        DynamicTemplateContainerDirective
+    ],
+    imports: [
+        BrowserModule, FormsModule
+    ],
+    exports: [
+        DynamicTemplateComponent,
+        DynamicTemplateContainerDirective
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
